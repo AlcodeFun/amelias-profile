@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amelia's Skills</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="About.html">About</a></div>
+        <div class="nav-item-highlight"><a href="Skills.html">Skills</a></div>
+        <div class="nav-item"><a href="Portofolio.html">Portfolio</a></div>
+        <div class="nav-item"><a href="Contact.html">Contact</a></div>
+      </div>
+      <div class="skills-content">
+        <h1>My Skills</h1>
+        <div class="skills">
+          <div class="skill">
+            <h2>UI Design</h2>
+            <p>
+              Proficient in creating visually appealing and user-friendly
+              interfaces using tools like Figma. Strong understanding of design
+              principles and typography.
+            </p>
+          </div>
+          <div class="skill">
+            <h2>UX Research</h2>
+            <p>
+              Experienced in conducting user research, creating user personas,
+              and designing user flows. Skilled in usability testing and
+              gathering valuable insights to inform design decisions.
+            </p>
+          </div>
+          <div class="skill">
+            <h2>Prototyping</h2>
+            <p>
+              Expertise in prototyping interactive designs. Capable of creating
+              clickable prototypes to demonstrate functionality and user
+              interactions.
+            </p>
+          </div>
+          <div class="skill">
+            <h2>Responsive Design</h2>
+            <p>
+              Familiar with designing responsive layouts that adapt seamlessly
+              across various devices and screen sizes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    background-color: #f1ebff;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav {
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 100px;
+    width: fit-content;
+    padding: 10px 30px;
+    margin: 20px auto;
+  }
+
+  .nav-item-highlight {
+    background-color: #7f56d9;
+    border-radius: 60px;
+    padding: 10px 20px;
+  }
+
+  .skills-content {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+  .skills-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .skill {
+    background-color: #c2a7fe;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .skill h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .skill p {
+    line-height: 1.6;
+  }
+
+  /* Styles for icons */
+  .skill.tool ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill.tool ul li {
+    margin-bottom: 10px;
+  }
+
+  .skill.tool ul li i {
+    margin-right: 10px;
+  }
+
+  /* Media query for smaller screens (mobile) */
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .nav-item {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .nav-item-highlight {
+      background-color: transparent;
+      border-radius: 60px;
+      padding: 10px;
+    }
+
+    .skills {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

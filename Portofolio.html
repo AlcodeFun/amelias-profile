@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amelia's Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        background-color: #f1ebff;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      h2 {
+        color: rgb(33, 32, 33);
+      }
+
+      .nav {
+        background-color: black;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        align-items: center;
+        color: white;
+        gap: 100px;
+        width: fit-content;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: auto;
+        margin-top: 20px;
+      }
+
+      .nav-item-highlight {
+        background-color: #7f56d9;
+        border-radius: 60px;
+        padding: 10px;
+      }
+
+      .portfolio-content {
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+      }
+
+      .portfolio-content h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .portfolio-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-card {
+        background-color: #c2a7fe;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .portfolio-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .portfolio-card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-card p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .portfolio-card a {
+        background-color: #7f56d9;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      /* Style the tabs */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .tablink {
+        background-color: #f1ebff;
+        color: #7f56d9;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .tablink.active {
+        background-color: #7f56d9;
+        color: white;
+      }
+
+      .tabcontent {
+        display: none;
+      }
+
+      .tabcontent.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="About.html">About</a></div>
+        <div class="nav-item"><a href="Skills.html">Skills</a></div>
+        <div class="nav-item-highlight">
+          <a href="Portofolio.html">Portofolio</a>
+        </div>
+        <div class="nav-item"><a href="Contact.html">Contact</a></div>
+      </div>
+      <div class="portfolio-content">
+        <h1>My Portfolio</h1>
+        <div class="tabs">
+          <button class="tablink" onclick="openCategory('All', event)">
+            All
+          </button>
+          <button class="tablink" onclick="openCategory('Projects', event)">
+            Projects
+          </button>
+          <button class="tablink" onclick="openCategory('UX', event)">
+            UX Cases
+          </button>
+        </div>
+        <div id="All" class="tabcontent">
+          <div class="portfolio-cards">
+            <!-- Include all portfolio items here -->
+            <div class="portfolio-card">
+              <img src="assets/janlink.svg" alt="Project 1" />
+              <h2>UI Design JanLink-Real Time Pedagang Keliling Location</h2>
+
+              <a href="#">View Details</a>
+            </div>
+            <div class="portfolio-card">
+              <img src="assets/signal.svg" alt="Project 2" />
+              <h2>
+                SIGNAL : Redesign Korlantas Digital APP (UI/UX Case Study)
+              </h2>
+
+              <a href="portofolio-signal.html">View Details</a>
+            </div>
+            <!-- Add more portfolio cards as needed -->
+          </div>
+        </div>
+        <div id="Projects" class="tabcontent">
+          <div class="portfolio-cards">
+            <!-- Include only project portfolio items here -->
+            <div class="portfolio-card">
+              <img src="assets/janlink.svg" alt="Project 3" />
+              <h2>UI Design JanLink-Real Time Pedagang Keliling Location</h2>
+              <a href="#">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div id="UX" class="tabcontent">
+          <div class="portfolio-cards">
+            <!-- Include only UX case portfolio items here -->
+            <div class="portfolio-card">
+              <img src="/assets/signal.svg" alt="UX Case 1" />
+              <h2>
+                SIGNAL : Redesign Korlantas Digital APP (UI/UX Case Study)
+              </h2>
+              <a href="portofolio-signal.html">View Details</a>
+            </div>
+            <!-- Add more UX case portfolio cards as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function openCategory(categoryName, event) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(categoryName).style.display = "block";
+        event.currentTarget.className += " active";
+      }
+      document.getElementsByClassName("tablink")[0].click(); // Open "All" category by default
+    </script>
+  </body>
+</html>
